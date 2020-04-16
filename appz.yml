@@ -1,0 +1,34 @@
+app:
+    name: Postgres Master
+    code: POSTGRES
+    notify: appzdev@cloudbourne.co
+build:
+    version: 12.2
+    env: DEV
+    build_file: none
+    output_files: output/*.zip
+    image_template: postgres_master-12.2
+    image_name: ea-sharedservices/postgres_master
+deploy:
+    context: EA-SharedServices/DEV
+    replicas: 1
+    port:
+    - 5432
+volumes:
+  - claim: postgress-master-data-eass
+    mount: /appz/data
+    name: data
+monitor:
+    notify: appzops@cloudbourne.co      
+properties:
+    POSTGRESQL_REPLICATION_MODE: master
+    PGDATA: /appz/data
+    POSTGRES_USER: postgres
+    POSTGRES_PASSWORD: 
+      vault: POSTGRES_PASSWORD
+    POSTGRESQL_SYNCHRONOUS_COMMIT_MODE: on
+    POSTGRESQL_NUM_SYNCHRONOUS_REPLICAS: 1
+    PGUSER: replica
+    PGPASSWORD: 
+      vault: PGPASSWORD   
+    revision : 07
