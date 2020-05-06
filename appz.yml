@@ -18,7 +18,7 @@ deploy:
     - 5432
     
 volumes:
-  - claim: postgres-master-data-eass
+  - claim: postgres-master-data
     mount: /appz/data
     name: data
     
