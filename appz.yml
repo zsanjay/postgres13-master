@@ -36,4 +36,4 @@ properties:
     PGUSER: replica
     PGPASSWORD: 
       vault: PGPASSWORD   
-    revision : 25
+    revision : 26
