@@ -13,6 +13,7 @@ build:
     
 deploy:
     context: alpha/DEV
+    type: statefulset
     replicas: 1
     port:
     - 5432
@@ -21,6 +22,9 @@ volumes:
   - claim: postgres-master-data
     mount: /appz/data
     name: data
+    size: 5Gi
+    mode: ReadWriteOnce
+    class: microk8s-hostpath   
     
 monitor:
     notify: appzops@cloudbourne.co      
@@ -28,12 +32,18 @@ monitor:
 properties:
     POSTGRESQL_REPLICATION_MODE: master
     PGDATA: /appz/data
-    POSTGRES_USER: postgres
+    POSTGRES_CONNECTUSER: postgres
+    POSTGRES_CONNECTIONDB: postgres
+    POSTGRES_PORT: 5432
     POSTGRES_PASSWORD: 
       vault: POSTGRES_PASSWORD
     POSTGRESQL_SYNCHRONOUS_COMMIT_MODE: on
     POSTGRESQL_NUM_SYNCHRONOUS_REPLICAS: 1
     PGUSER: replica
     PGPASSWORD: 
-      vault: PGPASSWORD   
-    revision : 25
+      vault: PGPASSWORD
+    APPUSER_PASSWORD:
+      vault: APPUSER_PASSWORD
+    APPZ_RESTORE_TOKEN: 20200810-1217
+    APPZ_LOAD_TOKEN: 20200810-1217
+    revision : 56
