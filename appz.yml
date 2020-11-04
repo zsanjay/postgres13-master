@@ -9,10 +9,10 @@ build:
     build_file: none
     output_files: output/*.zip
     image_template: postgres_master-12.2
-    image_name: ea-sharedservices/postgres_master
+    image_name: alpha/postgres_master
     
 deploy:
-    context: EA-SharedServices/DEV
+    context: alpha/DEV
     replicas: 1
     port:
     - 5432
