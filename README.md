@@ -13,4 +13,4 @@ PostgreSQL(also known as postgres) is one of the most advanced open-source relat
 This stack creates PostreSQL Master Database using GitOps. Use this stack standalone or optionally add a PostreSQL Slave database for HA/DR.
 
 ## Documentation
-Visit [PostgreSQL Master] (https://docs.ecloudcontrol.com/postgres-master/) on how to use this stack.
+[PostgreSQL Master](https://docs.ecloudcontrol.com/postgres-master/) 
