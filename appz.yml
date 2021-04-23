@@ -1,7 +1,7 @@
 app:
     name: Postgres Master
     code: POSTGRES
-    notify: appzdev@cloudbourne.co
+    notify: aborra@ecloudcontrol.com
     
 build:
     version: 12.2
@@ -9,10 +9,9 @@ build:
     build_file: none
     output_files: output/*.zip
     image_template: postgres_master-12.2
-    image_name: alpha/postgres_master
     
 deploy:
-    context: alpha/DEV
+    context: skumarpi/DEV
     type: statefulset
     replicas: 1
     port:
@@ -22,28 +21,26 @@ volumes:
   - claim: postgres-master-data
     mount: /appz/data
     name: data
-    size: 5Gi
-    mode: ReadWriteOnce
-    class: microk8s-hostpath   
-    
-monitor:
-    notify: appzops@cloudbourne.co      
+    size: 100Gi
+    mode: ReadWriteOnce   
     
 properties:
     POSTGRESQL_REPLICATION_MODE: master
-    PGDATA: /appz/data
-    POSTGRES_CONNECTUSER: postgres
-    POSTGRES_CONNECTIONDB: postgres
-    POSTGRES_PORT: 5432
-    POSTGRES_PASSWORD: 
-      vault: POSTGRES_PASSWORD
+    POSTGRESQL_DATA: /appz/data
+    POSTGRESQL_CONNECTUSER: postgres
+    POSTGRESQL_CONNECTIONDB: postgres
+    POSTGRESQL_PORT: 5432
+    POSTGRESQL_PASSWORD: 
+      vault: POSTGRESQL_PASSWORD
     POSTGRESQL_SYNCHRONOUS_COMMIT_MODE: on
     POSTGRESQL_NUM_SYNCHRONOUS_REPLICAS: 1
-    PGUSER: replica
+    POSTGRESQL_REP_USER: replica
+    POSTGRESQL_SPRINGBOOTWEB_PASSWORD:
+          vault: POSTGRESQL_SPRINGBOOTWEB_PASSWORD
     PGPASSWORD: 
       vault: PGPASSWORD
     APPUSER_PASSWORD:
       vault: APPUSER_PASSWORD
-    APPZ_RESTORE_TOKEN: 20200810-1217
-    APPZ_LOAD_TOKEN: 20200810-1217
-    revision : 56
+    APPZ_RESTORE_TOKEN: 20210301-1326
+    APPZ_LOAD_TOKEN: 20210301-1326
+    revision : 61
