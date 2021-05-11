@@ -21,7 +21,7 @@ volumes:
   - claim: postgres-master-data
     mount: /appz/data
     name: data
-    size: 100Gi
+    size: 10Gi
     mode: ReadWriteOnce   
     
 properties:
