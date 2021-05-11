@@ -18,4 +18,4 @@ restore:
     url: 'https://www.ecloudcontrol.com/wp-content/uploads/2021/03/accountsdb.zip'
   user: postgres
   password: $POSTGRESQL_PASSWORD
-  token: 20210429-1820
+  token: 20210511-1325
