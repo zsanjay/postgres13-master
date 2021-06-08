@@ -8,7 +8,7 @@ build:
     env: DEV
     build_file: none
     output_files: output/*.zip
-    image_template: postgres_master-12.2
+    image_template: postgres_master-12.6
     
 deploy:
     context: skumarpi/DEV
