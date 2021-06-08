@@ -4,7 +4,7 @@ app:
     notify: skumar@ecloudcontrol.com
     
 build:
-    version: 12.2
+    version: 12.X
     env: DEV
     build_file: none
     output_files: output/*.zip
@@ -21,7 +21,7 @@ volumes:
   - claim: postgres-master-data
     mount: /appz/data
     name: data
-    size: 100Gi
+    size: 10Gi
     mode: ReadWriteOnce   
     
 properties:
