@@ -8,7 +8,7 @@ build:
     env: DEV
     build_file: none
     output_files: output/*.zip
-    image_template: postgres_master-12.2
+    image_template: postgres_master-12.7
     
 deploy:
     context: skumarpi/DEV
@@ -43,4 +43,4 @@ properties:
       vault: APPUSER_PASSWORD
     #APPZ_RESTORE_TOKEN: 20210301-1326
     #APPZ_LOAD_TOKEN: 20210301-1326
-    revision : 65
+    revision : 66
