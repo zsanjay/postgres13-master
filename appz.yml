@@ -44,3 +44,11 @@ properties:
     #APPZ_RESTORE_TOKEN: 20210301-1326
     #APPZ_LOAD_TOKEN: 20210301-1326
     revision : 67
+
+    #WebDav Setup
+    PUSH_BACKUP_WEBDAV: True
+    DAV_FOLDER: DBBACKUP
+    DAV_USER: appz
+    DAV_USERPASSWORD:
+      vault: DAV_USERPASSWORD
+    WEBDAV_BACKUP_URL: http://webdav-2-0/
