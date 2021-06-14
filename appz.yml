@@ -43,4 +43,4 @@ properties:
       vault: APPUSER_PASSWORD
     #APPZ_RESTORE_TOKEN: 20210301-1326
     #APPZ_LOAD_TOKEN: 20210301-1326
-    revision : 66
+    revision : 67
