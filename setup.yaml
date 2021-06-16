@@ -5,9 +5,6 @@ users:
 databases:
   - name: springbootweb
     owner: springbootweb
-    tablespace:
-      - name: tb1
-        location: /appz/data/tb1
     schemas:
       - name: schema1
         authorised_user: springbootweb
@@ -15,7 +12,7 @@ databases:
 restore:
 - database: springbootweb
   source:
-    url: 'https://www.ecloudcontrol.com/wp-content/uploads/2021/03/accountsdb.zip'
-  user: postgres
-  password: $POSTGRESQL_PASSWORD
-  token: 20210616-1900
+    url: 'https://www.ecloudcontrol.com/wp-content/uploads/2021/06/accountsdb-springboot.sql_.zip'
+  user: springbootweb
+  password: $POSTGRESQL_SPRINGBOOTWEB_PASSWORD
+  token: 20210616-2050
