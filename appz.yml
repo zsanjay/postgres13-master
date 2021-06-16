@@ -42,7 +42,7 @@ properties:
     revision : 67
 
     #WebDav Setup
-    PUSH_BACKUP_WEBDAV: True
+    PUSH_BACKUP_WEBDAV: False
     DAV_FOLDER: DBBACKUP
     DAV_USER: appz
     DAV_USERPASSWORD:
