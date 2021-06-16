@@ -4,11 +4,11 @@ app:
     notify: skumar@ecloudcontrol.com
     
 build:
-    version: 12.X
+    version: 13.X
     env: DEV
     build_file: none
     output_files: output/*.zip
-    image_template: postgres_master-12.7
+    image_template: postgres_master-13.3
     
 deploy:
     context: skumarpi/DEV
@@ -21,7 +21,7 @@ volumes:
   - claim: postgres-master-data
     mount: /appz/data
     name: data
-    size: 10Gi
+    size: 5Gi
     mode: ReadWriteOnce   
     
 properties:
@@ -39,10 +39,6 @@ properties:
           vault: POSTGRESQL_SPRINGBOOTWEB_PASSWORD
     PGPASSWORD: 
       vault: PGPASSWORD
-    APPUSER_PASSWORD:
-      vault: APPUSER_PASSWORD
-    #APPZ_RESTORE_TOKEN: 20210301-1326
-    #APPZ_LOAD_TOKEN: 20210301-1326
     revision : 67
 
     #WebDav Setup
