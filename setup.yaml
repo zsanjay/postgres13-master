@@ -13,9 +13,9 @@ databases:
         authorised_user: springbootweb
         search_path: true
 restore:
-- database: springbootweb
-  source:
-    url: 'https://www.ecloudcontrol.com/wp-content/uploads/2021/03/accountsdb.zip'
-  user: postgres
-  password: $POSTGRESQL_PASSWORD
-  token: 20210623-0020
+  - database: springbootweb
+    source:
+      url: 'https://www.ecloudcontrol.com/wp-content/uploads/2021/06/accountsdb-springboot.sql_.zip'
+    user: springbootweb
+    password: $POSTGRESQL_SPRINGBOOTWEB_PASSWORD
+    token: 20210623-0240
