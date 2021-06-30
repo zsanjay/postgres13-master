@@ -1,7 +1,7 @@
 app:
     name: Postgres Master
     code: POSTGRES
-    notify: noreply@lowtouch.cloud
+    notify: appz@ecloudcontrol.com
     
 build:
     version: 13.X
