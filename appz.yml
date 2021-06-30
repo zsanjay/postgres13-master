@@ -1,7 +1,7 @@
 app:
     name: Postgres Master
     code: POSTGRES
-    notify: skumar@ecloudcontrol.com
+    notify: noreply@lowtouch.cloud
     
 build:
     version: 13.X
@@ -11,7 +11,7 @@ build:
     image_template: postgres_master-13.3
     
 deploy:
-    context: skumarpi/DEV
+    context: alpha/DEV
     type: statefulset
     replicas: 1
     port:
