@@ -4,6 +4,7 @@ users:
     role: superuser
   - name: dotnet
     password: $POSTGRESQL_DOTNET_PASSWORD
+    role: superuser
 databases:
   - name: springbootweb
     owner: springbootweb
