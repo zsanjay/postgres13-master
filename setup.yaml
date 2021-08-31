@@ -2,6 +2,8 @@ users:
   - name: springbootweb
     password: $POSTGRESQL_SPRINGBOOTWEB_PASSWORD
     role: superuser
+  - name: dotnet
+    password: $POSTGRESQL_DOTNET_PASSWORD
 databases:
   - name: springbootweb
     owner: springbootweb
@@ -12,6 +14,16 @@ databases:
       - name: schema1
         authorised_user: springbootweb
         search_path: true
+  - name: dotnet
+    owner: dotnet
+    tablespace:
+      - name: tb2
+        location: /appz/data/tb2
+    schemas:
+      - name: schema2
+        authorised_user: dotnet
+        search_path: true
+   
 restore:
   - database: springbootweb
     source:
